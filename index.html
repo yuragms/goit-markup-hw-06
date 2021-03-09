@@ -202,11 +202,51 @@
      <div class="backdrop is-hidden" data-modal>
          <div class="modal">
              <button data-modal-close class="mdodal-btn"><svg  width="30" height="30"><use href="./images/symbol-defs.svg#icon-close"></use></svg></button>
+             <h2>Оставьте свои данные, мы вам перезвоним</h2>
+             <form class="form js-speaker-form">
+               <div class="form-field">
+                <label for="name">Имя</label>
+                    <div class="form-input"><input type="text" name="name" id="name"/>
+                     <div class="modal-icon"><svg ><use href="./images/symbol-defs.svg#icon-name-form"></use></svg></div></div>
+                </div> 
+                <div class="form-field">
+                    <label for="tel">Телефон</label>
+                    <div class="form-input"><input type="tel" name="tel" id="id"/>
+                    <div class="modal-icon"><svg ><use href="./images/symbol-defs.svg#icon-phone-form"></use></svg></div></div>
+            </div>
+            <div class="form-field">
+                <label for="email">Почта</label>
+                <div class="form-input"><input type="email" name="email" id="email"/>
+                    <div class="modal-icon"><svg ><use href="./images/symbol-defs.svg#icon-email-form"></use></svg></div></div>
+            </div>
+            <div class="form-field"> 
+                <label for="comment">Коментарий</label>
+                    <textarea class="textarea" name="comment" id="comment" placeholder="Введите текст"></textarea>
+            </div>
+            <div class="form-check">
+                <input class="modcheck visually-hidden" type="checkbox" name="check" value="yes" id="check"/><div class="modcheck-svg"></div>
+                <label for="check">Соглашаюсь с рассылкой и принимаю <a href="#">Условия договора</a></label></div>
+                <div class="form-button"><button class="button-send" type="submit">Отправить</button></div>
+
+             </form>
          </div>
 
      </div>
 
   <!-- Ставим перед закрывающим тегом body -->
   <script src="./js/modal.js"></script>
+  
+
+  <script>
+(() => {
+  document.querySelector('.js-speaker-form').addEventListener('submit', e => {
+    e.preventDefault();
+
+    new FormData(e.currentTarget).forEach((value, name) =>
+      console.log(`${name}: ${value}`),
+    );
+  });
+})();
+</script>
 </body>
 </html>
