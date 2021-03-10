@@ -356,12 +356,20 @@ span {
 
   cursor: pointer;
   border: solid 1.67px var(--primary-title-text-color);
-  border-radius: 1px;
+  border-radius: 2px;
+  background-size: contain;
+  display: flex;
+  justify-content: center;
+}
+
+.modcheck-svg svg {
+  width: 16px;
+  height: 15px;
 }
 
 .modcheck:checked ~ .modcheck-svg {
-  background-color: green;
-  background-image: url("./images/symbol-defs.svg#icon-check-form");
+  background-color: var(--accent-color);
+  border: none;
 }
 
 .button-send {
@@ -716,7 +724,7 @@ address {
     background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.social-icofoot li {
+.social-icofoot li:not(:first-child) {
   padding-left: 10px;
 }
 
@@ -729,6 +737,60 @@ address {
   width: 20px;
   height: 20px;
   fill: currentColor;
+}
+
+.foot-form {
+  padding-left: 93px;
+}
+
+.foot-form input {
+  width: 358px;
+  height: 50px;
+  padding-left: 15px;
+
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-sizing: border-box;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+  border-radius: 4px;
+  background: var(--bg-section-color);
+}
+
+.button-sendfoot {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-left: 12px;
+  padding: 10px 26px;
+  width: 199px;
+  color: var(--primary-white-color);
+  background-color: var(--accent-color);
+  border: none;
+  border-radius: 4px;
+
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.875;
+  text-align: center;
+  letter-spacing: 0.06em;
+}
+.button-sendfoot:hover {
+  background-color: #188ce8;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+}
+
+.button-sendfoot svg {
+  width: 24px;
+  height: 24px;
+  fill: var(--primary-white-color);
+  margin-left: 9px;
+  display: inline-block;
+}
+
+.footinbut {
+  display: flex;
+  margin-top: 20px;
 }
 
 /* portfolio*/
