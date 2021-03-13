@@ -232,7 +232,7 @@
                     <textarea class="textarea" name="comment" id="comment" placeholder="Введите текст"></textarea>
             </div>
             <div class="form-check"><label for="check">
-                <input class="modcheck visually-hidden" type="checkbox" name="check" value="yes" id="check"/><span class="modcheck-svg"><svg><use href="./images/symbol-defs.svg#icon-check-form"></use></svg></span>
+                <input class="modcheck visually-hidden" type="checkbox" name="check" value="yes" id="check"/><span class="modcheck-svg"><svg ><use href="./images/symbol-defs.svg#icon-check-form"></use></svg></span>
                 Соглашаюсь с рассылкой и принимаю <a href="#">Условия договора</a></label></div>
                 <div class="form-button"><button class="button-send" type="submit">Отправить</button></div>
 
@@ -243,7 +243,17 @@
 
   <!-- Ставим перед закрывающим тегом body -->
   <script src="./js/modal.js"></script>
-  
+  <script>
+    (() => {
+      document.querySelector('.js-speaker-form').addEventListener('submit', e => {
+        e.preventDefault();
+    
+        new FormData(e.currentTarget).forEach((value, name) =>
+          console.log(`${name}: ${value}`),
+        );
+      });
+    })();
+    </script>
 
  
 </body>
